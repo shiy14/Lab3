@@ -28,3 +28,27 @@ puzzle.summary <- icecream %>% group_by(ice_cream) %>% summarise(Mean=mean(puzzl
 plot(density(copier$minutes),xlab="minutes")#,ylab="density")
 ```
 
+```{r}
+copier.fit <- lm(minutes~number,data=copier)
+copier.fit
+class(copier.fit)
+str(copier.fit)
+summary(copier.fit)
+```
+
+##Regression line
+
+```{r}
+plot(minutes~number, data=copier)
+abline(-0.5802,15.0352)#by definition of the line abline(intercept, slope)
+
+#The following are alternative ways to draw the fitted regression line.
+lines(copier$number,-0.5802+15.0352*copier$number)#other way
+
+abline(copier.fit)#simple way
+```
+
+```{r}
+summary(copier.fit)
+```
+
