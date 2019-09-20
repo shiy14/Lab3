@@ -48,7 +48,6 @@ lines(copier$number,-0.5802+15.0352*copier$number)#other way
 abline(copier.fit)#simple way
 ```
 
-```{r}
-summary(copier.fit)
-```
+
+
 
