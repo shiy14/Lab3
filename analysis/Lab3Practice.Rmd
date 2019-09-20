@@ -6,6 +6,25 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+```
+
+```{r}
+icecream <- read.table("/Users/yangfengshi/Desktop/STA\ 463/Lab2/icecream.txt")
+head(icecream)
+copier <- read.table("/Users/yangfengshi/Desktop/STA\ 463/Lab2/CH01PR20.txt")
+head(copier)
+```
+
+```{r}
+colnames(copier)=c("minutes","number")
+
+puzzle.summary <- icecream %>% group_by(ice_cream) %>% summarise(Mean=mean(puzzle),
+            Variance=var(puzzle))%>%as.data.frame()
+```
+
+```{r}
+plot(density(copier$minutes),xlab="minutes")#,ylab="density")
 ```
 
