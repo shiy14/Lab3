@@ -49,5 +49,16 @@ abline(copier.fit)#simple way
 ```
 
 
+```{r}
+res=copier.fit$residuals
 
+SSE=sum(res^2)
+df=nrow(copier)-2
+MSE=SSE/df
+sqrt(MSE) # Residual standard error
+```
+
+```{r}
+c(SSE,df,MSE,sqrt(MSE))
+```
 
